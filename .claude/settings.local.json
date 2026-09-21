@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p docs && ls -la)"
+    ],
+    "additionalDirectories": [
+      "\\\\wsl.localhost\\Ubuntu-24.04\\home\\jozneto\\univesp-pi\\pi-2026"
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "n_minutos": 20541,
+  "contaminacao": 0.01,
+  "seed": 42,
+  "features": [
+    "acOutputVoltage",
+    "acOutputFrequency",
+    "batteryVoltage",
+    "batteryPower",
+    "loadWatts",
+    "loadVA",
+    "inverterLoadPercent",
+    "pvPower",
+    "pvVoltage",
+    "batterySOC"
+  ],
+  "regra_atual": {
+    "minutos_alertados": 456,
+    "fracao": 0.02219950343216007,
+    "brutos_fora_faixa": 2453
+  },
+  "treino_dias": "06–15/09",
+  "teste_dias": "16–20/09",
+  "n_treino": 13799,
+  "n_teste": 6742,
+  "fracao_sinalizada_teste": 0.013349154553544943,
+  "minutos_sinalizados_teste": 90,
+  "sobreposicao_teste": {
+    "regra_e_modelo": 2,
+    "so_regra": 121,
+    "so_modelo": 88,
+    "regra_total": 123
+  },
+  "jaccard_medio_entre_sementes": 0.8363200177912342,
+  "perfil_sinalizados_z_medio": {
+    "acOutputVoltage": 0.10578021248164446,
+    "acOutputFrequency": -0.07705664955459371,
+    "batteryVoltage": -0.3662017044736575,
+    "batteryPower": -3.1797602846565205,
+    "loadWatts": 5.381348611091197,
+    "loadVA": 5.319870171803527,
+    "inverterLoadPercent": 5.3127538077758825,
+    "pvPower": 2.0635682352740625,
+    "pvVoltage": 0.03740351794804363,
+    "batterySOC": -0.42740815047431213
+  },
+  "episodios_teste": 19,
+  "episodios_lista": [
+    {
+      "inicio": "2026-09-16 14:14:00",
+      "fim": "2026-09-16 14:23:00",
+      "minutos": 10,
+      "loadWatts_max": 2011.4,
+      "batteryVoltage_min": 49.14,
+      "acOutputVoltage_min": 219.74,
+      "acOutputVoltage_max": 220.24
+    },
+    {
+      "inicio": "2026-09-16 14:29:00",
+      "fim": "2026-09-16 14:30:00",
+      "minutos": 2,
+      "loadWatts_max": 1905.8,
+      "batteryVoltage_min": 49.739999999999995,
+      "acOutputVoltage_min": 219.92,
+      "acOutputVoltage_max": 219.94
+    },
+    {
+      "inicio": "2026-09-16 14:39:00",
+      "fim": "2026-09-16 14:41:00",
+      "minutos": 3,
+      "loadWatts_max": 1842.8,
+      "batteryVoltage_min": 50.08,
+      "acOutputVoltage_min": 220.01999999999998,
+      "acOutputVoltage_max": 220.11999999999998
+    },
+    {
+      "inicio": "2026-09-16 14:57:00",
+      "fim": "2026-09-16 14:58:00",
+      "minutos": 2,
+      "loadWatts_max": 1780.4,
+      "batteryVoltage_min": 50.083333333333336,
+      "acOutputVoltage_min": 219.78000000000003,
+      "acOutputVoltage_max": 220.35
+    },
+    {
+      "inicio": "2026-09-16 18:04:00",
+      "fim": "2026-09-16 18:14:00",
+      "minutos": 11,
+      "loadWatts_max": 1834.2,
+      "batteryVoltage_min": 48.0,
+      "acOutputVoltage_min": 219.71999999999997,
+      "acOutputVoltage_max": 220.24
+    },
+    {
+      "inicio": "2026-09-16 19:03:00",
+      "fim": "2026-09-16 19:05:00",
+      "minutos": 3,
+      "loadWatts_max": 1855.0,
+      "batteryVoltage_min": 47.68,
+      "acOutputVoltage_min": 219.88000000000002,
+      "acOutputVoltage_max": 220.16
+    },
+    {
+      "inicio": "2026-09-16 19:34:00",
+      "fim": "2026-09-16 20:09:00",
+      "minutos": 36,
+      "loadWatts_max": 2257.0,
+      "batteryVoltage_min": 46.96,
+      "acOutputVoltage_min": 219.74,
+      "acOutputVoltage_max": 220.28000000000003
+    },
+    {
+      "inicio": "2026-09-17 13:05:00",
+      "fim": "2026-09-17 13:11:00",
+      "minutos": 7,
+      "loadWatts_max": 1892.0,
+      "batteryVoltage_min": 49.1,
+      "acOutputVoltage_min": 219.92,
+      "acOutputVoltage_max": 220.08
+    },
+    {
+      "inicio": "2026-09-17 13:18:00",
+      "fim": "2026-09-17 13:20:00",
+      "minutos": 3,
+      "loadWatts_max": 1928.4,
+      "batteryVoltage_min": 50.62,
+      "acOutputVoltage_min": 219.88000000000002,
+      "acOutputVoltage_max": 220.08
+    },
+    {
+      "inicio": "2026-09-17 13:28:00",
+      "fim": "2026-09-17 13:31:00",
+      "minutos": 4,
+      "loadWatts_max": 2248.6,
+      "batteryVoltage_min": 48.760000000000005,
+      "acOutputVoltage_min": 219.56,
+      "acOutputVoltage_max": 220.18
+    },
+    {
+      "inicio": "2026-09-17 21:49:00",
+      "fim": "2026-09-17 21:50:00",
+      "minutos": 2,
+      "loadWatts_max": 1908.25,
+      "batteryVoltage_min": 49.8,
+      "acOutputVoltage_min": 209.925,
+      "acOutputVoltage_max": 210.04000000000002
+    },
+    {
+      "inicio": "2026-09-17 22:12:00",
+      "fim": "2026-09-17 22:13:00",
+      "minutos": 2,
+      "loadWatts_max": 2062.4,
+      "batteryVoltage_min": 49.8,
+      "acOutputVoltage_min": 212.21999999999997,
+      "acOutputVoltage_max": 212.34
+    },
+    {
+      "inicio": "2026-09-17 23:18:00",
+      "fim": "2026-09-17 23:18:00",
+      "minutos": 1,
+      "loadWatts_max": 2109.0,
+      "batteryVoltage_min": 49.8,
+      "acOutputVoltage_min": 214.0,
+      "acOutputVoltage_max": 214.0
+    },
+    {
+      "inicio": "2026-09-19 11:07:00",
+      "fim": "2026-09-19 11:14:00",
+      "minutos": 8,
+      "loadWatts_max": 2014.8,
+      "batteryVoltage_min": 49.68333333333334,
+      "acOutputVoltage_min": 219.92,
+      "acOutputVoltage_max": 220.0
+    },
+    {
+      "inicio": "2026-09-19 11:21:00",
+      "fim": "2026-09-19 11:22:00",
+      "minutos": 2,
+      "loadWatts_max": 2620.0,
+      "batteryVoltage_min": 49.42,
+      "acOutputVoltage_min": 219.84,
+      "acOutputVoltage_max": 220.23333333333335
+    },
+    {
+      "inicio": "2026-09-19 11:31:00",
+      "fim": "2026-09-19 11:33:00",
+      "minutos": 3,
+      "loadWatts_max": 2044.0,
+      "batteryVoltage_min": 50.379999999999995,
+      "acOutputVoltage_min": 219.94,
+      "acOutputVoltage_max": 220.16
+    },
+    {
+      "inicio": "2026-09-19 11:57:00",
+      "fim": "2026-09-19 11:57:00",
+      "minutos": 1,
+      "loadWatts_max": 2051.5,
+      "batteryVoltage_min": 51.75,
+      "acOutputVoltage_min": 219.95,
+      "acOutputVoltage_max": 219.95
+    },
+    {
+      "inicio": "2026-09-19 17:55:00",
+      "fim": "2026-09-19 17:58:00",
+      "minutos": 4,
+      "loadWatts_max": 1732.6,
+      "batteryVoltage_min": 48.3,
+      "acOutputVoltage_min": 219.9,
+      "acOutputVoltage_max": 220.01999999999998
+    },
+    {
+      "inicio": "2026-09-19 20:22:00",
+      "fim": "2026-09-19 20:22:00",
+      "minutos": 1,
+      "loadWatts_max": 1844.0,
+      "batteryVoltage_min": 47.64,
+      "acOutputVoltage_min": 220.54000000000002,
+      "acOutputVoltage_max": 220.54000000000002
+    }
+  ],
+  "ausencia_rede": {
+    "episodios": 4,
+    "minutos_total": 669,
+    "duracao_mediana_min": 151.5,
+    "duracao_max_min": 257
+  }
+}
