@@ -95,8 +95,12 @@ walk-forward em 8 dias de teste (13–20/09): 15 min → persistência vence;
 8/8 dias); 3 h e dia seguinte → climatologia vence. Anomalias (Isolation
 Forest, 1%) sinalizam picos de carga; sobreposição quase nula com a regra
 atual (tensão fora de 212–230 V).
-DOCX: python-docx + Word COM (script de atualização de campos/PDF no
-scratchpad da sessão). Placeholders amarelos no docx: [Curso], [Polo(s)],
+DOCX: gerado por `src/build_relatorio.py` (python-docx) e depois aberto no
+Word via COM só para atualizar sumário/listas (a versão em
+`reports/final/` JÁ é a atualizada pelo Word, 36 págs). Se rodar o builder
+de novo, o arquivo perde os números de página do sumário: abrir no Word e
+Ctrl+A → F9. Obs.: exportar PDF por COM trava neste PC (usar "Salvar como
+PDF" manualmente no Word). Placeholders amarelos no docx: [Curso], [Polo(s)],
 [Cidade]. Sumário/listas são campos do Word (atualizar com F9 se editar).
 Refs verificadas via web: Inman et al. 2013, Bergmeir & Benítez 2012, Lei
 14.300 (ementa), FPP3. Modbus spec sem URL (link 404). Demais refs clássicas

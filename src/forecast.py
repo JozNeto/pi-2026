@@ -247,7 +247,8 @@ def main() -> dict:
     ax.bar(x + w, DA.kwh_clim, w, color=AQUA, label="Climatologia")
     ax.set_xticks(x); ax.set_xticklabels([pd.Timestamp(d).strftime("%d/%m") for d in DA.dia])
     ax.set_ylabel("Energia FV diária (kWh)"); ax.set_xlabel("Dia previsto")
-    ax.grid(axis="y", color=GRID, lw=.6); ax.set_axisbelow(True); ax.legend(frameon=False, fontsize=8, ncol=3)
+    ax.set_ylim(0, float(max(DA.kwh_real.max(), DA.kwh_naive.max(), DA.kwh_clim.max())) * 1.3)
+    ax.grid(axis="y", color=GRID, lw=.6); ax.set_axisbelow(True); ax.legend(frameon=False, fontsize=8, ncol=3, loc="upper left")
     fig.tight_layout(); fig.savefig(FIG / "fig_day_ahead.png", dpi=200); plt.close(fig)
 
     (ROOT / "reports" / "forecast_resultados.json").write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")

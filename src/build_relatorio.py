@@ -337,7 +337,7 @@ P("<b>Palavras-chave</b>: Energia solar fotovoltaica. Previsão de séries tempo
 ABSTRACT = (
     f"This partial report presents the first version (V1) of the work carried out in Projeto Integrador IV based on SolarSync, a photovoltaic "
     f"monitoring system that acquires data from a hybrid inverter through an ESP32 (RS485/Modbus) and stores them in a MongoDB Atlas database. "
-    f"To add a machine learning layer to the system, {n(E['n_registros'])} records collected between September 6 and 20, 2026 were analysed, and short-term "
+    f"To add a machine learning layer to the system, {E['n_registros']:,} records collected between September 6 and 20, 2026 were analysed, and short-term "
     f"photovoltaic power forecasting models (15-minute resolution) and an anomaly detection baseline were built. The methodology comprised read-only data "
     f"extraction, exploratory analysis, resampling, feature engineering and daily walk-forward validation over {F['config']['n_dias_teste']} test days. Reference models "
     f"(persistence, 24-hour seasonal naive and climatology), Ridge regression and Gradient Boosting were compared. For the one-hour horizon, Gradient Boosting "
@@ -509,7 +509,7 @@ P(f"Os dados foram extraídos da coleção de telemetria do banco <i>anenji_moni
   f"estado do inversor (Apêndice A).")
 H(2, "3.4 PRÉ-PROCESSAMENTO")
 P("O MongoDB armazena datas em tempo universal coordenado (UTC). Os instantes foram convertidos para o horário local (UTC−3, sem horário de verão), "
-  "o que foi corroborado pelo perfil diário da geração, que se estende de cerca das 6 h às 17 h locais (seção 4.1.3). Foram verificados duplicidade "
+  "o que foi corroborado pelo perfil diário da geração, que se estende de cerca das 6 h às 18 h locais (seção 4.1.3). Foram verificados duplicidade "
   "de instantes, valores ausentes e intervalos entre leituras. Para a modelagem, as leituras foram agregadas por média em janelas de 15 minutos; "
   "janelas com menos de 10 leituras foram descartadas (tratadas como ausentes) e lacunas de até duas janelas consecutivas foram preenchidas por "
   "interpolação linear. A energia diária foi estimada pela integração da potência ao longo do tempo, limitando o intervalo entre leituras consecutivas a 60 s "
@@ -642,8 +642,9 @@ dmax = max(ls["por_dia"], key=ls["por_dia"].get)
 P(f"Nas janelas diurnas com potência FV superior a 50 W, o SOC da bateria esteve em 99% ou mais em {pct(ls['fracao'])} dos casos "
   f"({ls['linhas_soc_ge_99']} de {ls['linhas_diurnas']}), com grande variação entre dias: de 0% em vários dias até {pct(ls['por_dia'][dmax], 0)} em {dia_br(dmax)}. "
   f"Nessas janelas, a razão mediana entre potência FV e potência da carga foi de {n(ls['razao_pv_carga_mediana'], 2)}, isto é, a potência FV passa a "
-  f"acompanhar de perto o consumo. A Figura 5 ilustra o fenômeno em 19/09: a potência FV, que chegava a cerca de 1.900 W, cai abruptamente e se "
-  f"estabiliza pouco acima da potência da carga assim que o SOC atinge 100%, ainda que o período do dia fosse de alta irradiância. O comportamento é "
+  f"acompanhar de perto o consumo. A Figura 5 ilustra o fenômeno em 19/09: a potência FV, que chegava a cerca de 1.900 W, cai abruptamente por volta "
+  f"das 11 h 30 min, quando o SOC retorna a 100% após um pico de consumo, e passa a se manter pouco acima da potência da carga, ainda que o período do dia fosse "
+  f"de alta irradiância. O comportamento é "
   f"compatível com a redução da potência extraída dos painéis pelo inversor quando não há para onde direcionar a energia excedente (seção 2.1).")
 figura("fig_limitacao_soc.png", "Potência FV, potência da carga e SOC em 19/09/2026 (hora local)", 14.5)
 P("Esse resultado tem duas consequências para o projeto. Primeiro, a série de potência FV medida <i>censura</i> a geração potencial nos períodos de bateria "
@@ -739,7 +740,7 @@ P(f"O ponto central é a <b>sobreposição desprezível</b> entre os critérios:
   f"{n(z['inverterLoadPercent'], 1)} na carga percentual do inversor), e a potência da bateria fortemente negativa ({n(z['batteryPower'], 1)} desvios), ou seja, os episódios "
   f"correspondem a picos de consumo (potência máxima de {n(cmin)} a {n(cmax)} W nos episódios, contra mediana de {n(D['loadWatts']['50%'])} W), atendidos "
   f"com descarga da bateria. Já a tensão de saída, que motiva a regra atual, praticamente não contribuiu para os escores do modelo. A Figura 10 mostra que os "
-  f"afundamentos de tensão abaixo de 212 V ocorrem em períodos prolongados (por exemplo, nos dias 18 e 20/09), nos quais o modelo não sinaliza nada, "
+  f"afundamentos de tensão abaixo de 212 V ocorrem em períodos prolongados (por exemplo, em torno da virada de 17 para 18/09 e ao longo de 20/09), nos quais o modelo não sinaliza nada, "
   f"enquanto os pontos sinalizados situam-se em picos de carga com tensão normal.")
 figura("fig_anomalias.png", "Tensão de saída CA e potência da carga no período de teste, com minutos sinalizados pelo Isolation Forest", 15.0)
 P("Interpretação: as duas abordagens detectam fenômenos distintos e complementares. A regra atual captura excursões de tensão de saída, que ocorrem "
